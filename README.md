@@ -6,16 +6,18 @@ Plateforme nationale digitale pour les entreprises tunisiennes. Trois moteurs de
 
 ---
 
-## Table des matières
+## Référence rapide
 
-1. [Démarrage rapide](#1-démarrage-rapide)
-2. [Installation complète](#2-installation-complète)
-3. [Setup du dossier `.claude/skills`](#3-setup-du-dossier-claudeskills)
-4. [Comment ce projet a été construit avec Claude Code](#4-comment-ce-projet-a-été-construit-avec-claude-code)
-5. [Pourquoi le dossier `skills` est essentiel](#5-pourquoi-le-dossier-skills-est-essentiel)
-6. [Comment créer un skill personnalisé](#6-comment-créer-un-skill-personnalisé)
-7. [Commandes Claude Code essentielles](#7-commandes-claude-code-essentielles)
-8. [Déploiement sur Vercel](#8-déploiement-sur-vercel)
+| # | Section | Sous-sections |
+|---|---|---|
+| 1 | [Démarrage rapide](#1-démarrage-rapide) | Variables d'env minimum |
+| 2 | [Installation complète](#2-installation-complète) | [Prérequis](#prérequis) · [Étapes](#étapes) |
+| 3 | [Setup `.claude/skills`](#3-setup-du-dossier-claudeskills) | [Installer Claude Code](#étape-1--installer-claude-code) · [Initialiser `.claude/`](#étape-2--initialiser-claude) · [Cloner gstack](#étape-4--cloner-gstack--installer-ses-dépendances) · [Symlinks gstack](#étape-5--créer-les-symlinks-vers-les-sous-skills-gstack) · [anthropic-skills](#étape-6--cloner-anthropic-skills) · [Skill next_dev_pura](#étape-7--créer-le-skill-next_dev_pura) · [Skill code_review_pura](#étape-8--créer-le-skill-code_review_pura) · [Vérification finale](#étape-9--vérifier-la-structure-finale) |
+| 4 | [Comment ce projet a été construit](#4-comment-ce-projet-a-été-construit-avec-claude-code) | [Session 1 — Exploration](#session-1--exploration-et-documentation) · [Session 2 — Phase publique](#session-2--construction-phase-1-public) · [Session 3 — Dashboard](#session-3--construction-phase-2-dashboard) · [Session 4 — TypeScript](#session-4--correction-typescript-et-build) · [Session 5 — Docs/Git](#session-5--documentation-et-setup-git) |
+| 5 | [Pourquoi le dossier `skills` est essentiel](#5-pourquoi-le-dossier-skills-est-essentiel) | [Problème sans skills](#le-problème-sans-skills) · [Ce que font les skills](#ce-que-font-les-skills) · [Skills utilisés](#les-skills-utilisés-sur-ce-projet) · [Chargement automatique](#comment-les-skills-sont-chargés) |
+| 6 | [Créer un skill personnalisé](#6-comment-créer-un-skill-personnalisé) | [Structure](#structure-dun-skill) · [Format SKILL.md](#format-du-fichier-skillmd) · [Contenu efficace](#contenu-dun-skill-efficace) · [Exemple complet](#exemple-complet--skill-pour-une-api-rest-express) · [Activer un skill](#activer-un-skill-explicitement) · [Tips](#tips-pour-écrire-un-skill-efficace) |
+| 7 | [Commandes Claude Code](#7-commandes-claude-code-essentielles) | [Lancer Claude Code](#lancer-claude-code) · [Commandes slash](#commandes-slash-dans-la-session-interactive) · [Invoquer un skill](#invoquer-un-skill) · [Workflow](#commandes-de-workflow) · [Prompts efficaces](#patterns-de-prompts-efficaces) · [Raccourcis clavier](#raccourcis-clavier) |
+| 8 | [Déploiement sur Vercel](#8-déploiement-sur-vercel) | Variables de production |
 
 ---
 
