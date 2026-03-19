@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MARKET-UP — Microsoft Fluent Design System 2 tokens
+   These are the source-of-truth design variables for the entire app.
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Microsoft Fluent colors */
+  --ms-blue:           #0078D4;
+  --ms-blue-hover:     #106EBE;
+  --ms-blue-light:     #EFF6FC;
+  --ms-blue-dark:      #005A9E;
+  --ms-text:           #242424;
+  --ms-text-muted:     #616161;
+  --ms-bg:             #FFFFFF;
+  --ms-bg-subtle:      #F5F5F5;
+  --ms-border:         #E0E0E0;
+  --ms-border-strong:  #D1D1D1;
+  --ms-success:        #107C10;
+  --ms-error:          #D13438;
+  --ms-sidebar:        #1F1F1F;
+  --ms-gold:           #C5A059;
+
+  /* Engine accent colors */
+  --engine-brandup:    #0078D4;
+  --engine-traceup:    #8764B8;
+  --engine-linkup-bg:  #000000;
+  --engine-linkup-acc: #C5A059;
+
+  /* shadcn/ui tokens — overridden to match Fluent palette */
+  --background:              #FFFFFF;
+  --foreground:              #242424;
+  --card:                    #FFFFFF;
+  --card-foreground:         #242424;
+  --popover:                 #FFFFFF;
+  --popover-foreground:      #242424;
+  --primary:                 #0078D4;
+  --primary-foreground:      #FFFFFF;
+  --secondary:               #F5F5F5;
+  --secondary-foreground:    #242424;
+  --muted:                   #F5F5F5;
+  --muted-foreground:        #616161;
+  --accent:                  #EFF6FC;
+  --accent-foreground:       #0078D4;
+  --destructive:             #D13438;
+  --border:                  #E0E0E0;
+  --input:                   #D1D1D1;
+  --ring:                    #0078D4;
+  --radius:                  0.5rem; /* 8px — Fluent card radius */
+
+  /* Sidebar */
+  --sidebar:                       #1F1F1F;
+  --sidebar-foreground:            rgba(255,255,255,0.65);
+  --sidebar-primary:               #0078D4;
+  --sidebar-primary-foreground:    #FFFFFF;
+  --sidebar-accent:                rgba(255,255,255,0.06);
+  --sidebar-accent-foreground:     rgba(255,255,255,0.9);
+  --sidebar-border:                rgba(255,255,255,0.08);
+  --sidebar-ring:                  #0078D4;
+}
+
+/* Map shadcn @theme tokens to CSS vars */
+@theme inline {
+  --color-background:               var(--background);
+  --color-foreground:               var(--foreground);
+  --color-card:                     var(--card);
+  --color-card-foreground:          var(--card-foreground);
+  --color-popover:                  var(--popover);
+  --color-popover-foreground:       var(--popover-foreground);
+  --color-primary:                  var(--primary);
+  --color-primary-foreground:       var(--primary-foreground);
+  --color-secondary:                var(--secondary);
+  --color-secondary-foreground:     var(--secondary-foreground);
+  --color-muted:                    var(--muted);
+  --color-muted-foreground:         var(--muted-foreground);
+  --color-accent:                   var(--accent);
+  --color-accent-foreground:        var(--accent-foreground);
+  --color-destructive:              var(--destructive);
+  --color-border:                   var(--border);
+  --color-input:                    var(--input);
+  --color-ring:                     var(--ring);
+  --radius-sm:                      4px;
+  --radius-md:                      8px;
+  --radius-lg:                      12px;
+  --font-sans: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --color-sidebar:                  var(--sidebar);
+  --color-sidebar-foreground:       var(--sidebar-foreground);
+  --color-sidebar-primary:          var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:           var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:           var(--sidebar-border);
+  --color-sidebar-ring:             var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--ms-bg);
+    color: var(--ms-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--ms-text);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Fluent utility classes used across the app
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Cards */
+.ms-card {
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ms-card:hover {
+  border-color: #0078D4;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Primary button */
+.ms-btn-primary {
+  background: #0078D4;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ms-btn-primary:hover  { background: #106EBE; }
+.ms-btn-primary:active { background: #005A9E; }
+
+/* Secondary button */
+.ms-btn-secondary {
+  background: transparent;
+  color: #0078D4;
+  border: 1.5px solid #0078D4;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ms-btn-secondary:hover { background: #EFF6FC; }
+
+/* Ghost button */
+.ms-btn-ghost {
+  background: transparent;
+  color: #0078D4;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ms-btn-ghost:hover { background: #EFF6FC; }
+
+/* Form input */
+.ms-input {
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #242424;
+  background: #FFFFFF;
+  width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+.ms-input:focus {
+  border-color: #0078D4;
+  box-shadow: 0 0 0 2px #EFF6FC;
+}
+.ms-input::placeholder { color: #A0A0A0; }
+.ms-input.error { border-color: #D13438; }
+
+/* Input label */
+.ms-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #616161;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
