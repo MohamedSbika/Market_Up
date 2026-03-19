@@ -144,8 +144,7 @@ mkdir -p next_dev_pura
 
 Créer `next_dev_pura/SKILL.md` :
 
-<details>
-<summary>Contenu complet de <code>next_dev_pura/SKILL.md</code></summary>
+Contenu de `next_dev_pura/SKILL.md` :
 
 ```markdown
 ---
@@ -246,7 +245,6 @@ Every API route must:
 | Storing TTC directly | Store HT, compute TTC = HT * 1.19 |
 | `throw` at module load | Throw lazily inside functions |
 ```
-</details>
 
 ### Étape 8 — Créer le skill `code_review_pura`
 
@@ -254,10 +252,7 @@ Every API route must:
 mkdir -p code_review_pura
 ```
 
-Créer `code_review_pura/SKILL_code_review.md` :
-
-<details>
-<summary>Contenu complet de <code>code_review_pura/SKILL_code_review.md</code></summary>
+Contenu de `code_review_pura/SKILL_code_review.md` :
 
 ```markdown
 ---
@@ -332,7 +327,6 @@ You are a senior code reviewer. Reviews are precise, actionable, and prioritized
 | TVA 19% not applied | 🟠 Major |
 | LinkUp published without whatsapp/gpsUrl | 🟠 Major |
 ```
-</details>
 
 ### Étape 9 — Vérifier la structure finale
 
